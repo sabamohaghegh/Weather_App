@@ -1,9 +1,9 @@
-.container {
+.weatherContainer {
   border: 1px solid gray;
   margin: 15px auto;
   padding: 15px;
   border-radius: 10px;
-  max-width: fit-content;
+  max-width: 400px;
 }
 h1 {
   margin: 0 auto;
@@ -30,4 +30,14 @@ p {
 }
 a:-webkit-any-link {
   text-decoration: none;
+}
+small {
+  font-size: 80%;
+  font-weight: 400;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+.cityName {
+  width: 255px;
 }

@@ -16,93 +16,103 @@
   </head>
   <body>
     <div class="container">
-      <form>
-        <input
-          type="search"
-          class="cityName"
-          id="city-name"
-          placeholder="Enter City Name"
-        />
+      <div class="weatherContainer">
+        <form>
+          <input
+            type="search"
+            class="cityName"
+            id="city-name"
+            placeholder="Enter City Name"
+          />
 
-        <input type="submit" id="searchButton" value="Search" />
-        <span class="currentLocation" id="current-location">
-          <a href="#"> 📍</a></span
-        >
-      </form>
-      <br />
-      <h1>
-        <span class="emoji" id="emoji-h1">☀</span
-        ><span class="h1" id="h1-heading"></span>
-        <span class="units">
-          <span class="celsius"> <a href="#">°C</a></span
-          >|<span class="fahrenheit"><a href="#">°F</a></span></span
-        >
-      </h1>
-      <br />
-      <div class="info">
-        <div class="row">
-          <div class="col-6">
-            <div class="info">
-              <div class="city"></div>
-              <div class="day" id="current-day"></div>
-              <div class="date">
-                <span class="date-month"></span>/<span class="date-day"></span>
+          <input type="submit" id="searchButton" value="Search" />
+          <span class="currentLocation" id="current-location">
+            <a href="#"> 📍</a></span
+          >
+        </form>
+        <br />
+        <h1>
+          <span class="emoji" id="emoji-h1">☀</span
+          ><span class="h1" id="h1-heading"></span>
+          <span class="units">
+            <span class="celsius"> <a href="#">°C</a></span
+            >|<span class="fahrenheit"><a href="#">°F</a></span></span
+          >
+        </h1>
+        <br />
+        <div class="info">
+          <div class="row">
+            <div class="col-6">
+              <div class="info">
+                <div class="city"></div>
+                <div class="day" id="current-day"></div>
+                <div class="date">
+                  <span class="date-month"></span>/<span
+                    class="date-day"
+                  ></span>
+                </div>
+                <div class="time"></div>
               </div>
-              <div class="time"></div>
+            </div>
+            <br />
+            <br />
+            <div class="col-6">
+              <div class="weather">
+                <div>
+                  <span id="description"></span>
+                </div>
+                <div>Wind:<span id="wind"> </span> Km/H</div>
+                <div>Humidity: <span id="humidity"></span>%</div>
+              </div>
             </div>
           </div>
-          <br />
-          <br />
-          <div class="col-6">
-            <div class="weather">
-              <div>
-                <span id="description"></span>
-              </div>
-              <div>Wind:<span id="wind"> </span> Km/H</div>
-              <div>Humidity: <span id="humidity"></span>%</div>
+        </div>
+        <br />
+        <p>
+          🕶<br />
+          Don't forget your sunglasses
+        </p>
+        <br />
+        <div class="future">
+          <div class="row">
+            <div class="col-3">
+              Thu
+              <br />
+              ☁
+              <br />
+              7°
+            </div>
+            <div class="col-3">
+              Wed
+              <br />
+              🌧
+              <br />
+              6°
+            </div>
+            <div class="col-3">
+              Sat
+              <br />
+              ⛅
+              <br />
+              10°
+            </div>
+            <div class="col-3">
+              Sun
+              <br />
+              ❄
+              <br />
+              1°
             </div>
           </div>
         </div>
       </div>
-      <br />
-      <p>
-        🕶<br />
-        Don't forget your sunglasses
-      </p>
-      <br />
-      <div class="future">
-        <div class="row">
-          <div class="col-3">
-            Thu
-            <br />
-            ☁
-            <br />
-            7°
-          </div>
-          <div class="col-3">
-            Wed
-            <br />
-            🌧
-            <br />
-            6°
-          </div>
-          <div class="col-3">
-            Sat
-            <br />
-            ⛅
-            <br />
-            10°
-          </div>
-          <div class="col-3">
-            Sun
-            <br />
-            ❄
-            <br />
-            1°
-          </div>
-        </div>
-      </div>
+      <small
+        ><a href="https://github.com/sabamohaghegh/Weather_App" target="_blank"
+          >Open-source code</a
+        >, by Saba Mohaghegh</small
+      >
     </div>
+
     <script src="src/java2.js"></script>
   </body>
 </html>
