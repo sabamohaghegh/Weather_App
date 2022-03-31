@@ -41,3 +41,6 @@ small {
 .cityName {
   width: 255px;
 }
+.weather::first-letter {
+  text-transform: capitalize;
+}
