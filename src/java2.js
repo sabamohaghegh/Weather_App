@@ -49,6 +49,7 @@ let currentDateMonth = document.querySelector(".date .date-month");
 currentDateMonth.innerHTML = updateDateMonth();
 
 function currentTemp(response) {
+  console.log(response.data.weather[0].icon);
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector("#h1-heading").innerHTML = Math.round(
     response.data.main.temp
@@ -59,6 +60,75 @@ function currentTemp(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document
+    .querySelector("#icon-h1")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  let icon = response.data.weather[0].icon;
+
+  console.log(icon);
+
+  if (icon === "01d" || icon === "01n") {
+    document.querySelector("#emoji-fun").innerHTML = "🕶";
+    document.querySelector("#funny-prescription").innerHTML =
+      "Don't forget your sunglasses!";
+  } else {
+    if (icon === "02d" || icon === "02n") {
+      document.querySelector("#emoji-fun").innerHTML = "😉";
+      document.querySelector("#funny-prescription").innerHTML =
+        "Don't forget to soak up the sunlight as much as there is!";
+    } else {
+      if (icon === "03d" || icon === "03n") {
+        document.querySelector("#emoji-fun").innerHTML = "😊";
+        document.querySelector("#funny-prescription").innerHTML =
+          "Don't forget to be happy!";
+      } else {
+        if (icon === "04d" || icon === "04n") {
+          document.querySelector("#emoji-fun").innerHTML = "😋";
+          document.querySelector("#funny-prescription").innerHTML =
+            "Don't forget to smile!";
+        } else {
+          if (icon === "09d" || icon === "09n") {
+            document.querySelector("#emoji-fun").innerHTML = "🌂";
+            document.querySelector("#funny-prescription").innerHTML =
+              "Don't forget your umbrella!";
+          } else {
+            if (icon === "10d" || icon === "10n") {
+              document.querySelector("#emoji-fun").innerHTML = "🌂";
+              document.querySelector("#funny-prescription").innerHTML =
+                "Don't forget your umbrella!";
+            } else {
+              if (icon === "11d" || icon === "11n") {
+                document.querySelector("#emoji-fun").innerHTML = "🐱‍👤";
+                document.querySelector("#funny-prescription").innerHTML =
+                  "Don't forget to be brave!";
+              } else {
+                if (icon === "13d" || icon === "13n") {
+                  document.querySelector("#emoji-fun").innerHTML = "🧣";
+                  document.querySelector("#funny-prescription").innerHTML =
+                    "Don't forget to wear warm clothes";
+                } else {
+                  if (icon === "50d" || icon === "50n") {
+                    document.querySelector("#emoji-fun").innerHTML = "☕";
+                    document.querySelector("#funny-prescription").innerHTML =
+                      "Don't forget to drink a cup of coffee!";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  document
+    .querySelector("#icon-h1")
+    .setAttribute(
+      "alt",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+    );
 }
 
 function search(city) {
