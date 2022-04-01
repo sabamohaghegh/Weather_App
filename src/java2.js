@@ -68,8 +68,6 @@ function currentTemp(response) {
     );
   let icon = response.data.weather[0].icon;
 
-  console.log(icon);
-
   if (icon === "01d" || icon === "01n") {
     document.querySelector("#emoji-fun").innerHTML = "🕶";
     document.querySelector("#funny-prescription").innerHTML =
