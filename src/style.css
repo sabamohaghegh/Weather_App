@@ -39,8 +39,14 @@ small {
   display: block;
   text-align: center;
 }
-.cityName {
-  width: 255px;
+#current-location {
+  position: relative;
+  top: 6px;
+  left: 38px;
+}
+#searchButton {
+  background-color: rgba(94, 145, 211, 0.767);
+  border: rgba(94, 145, 211, 0.767);
 }
 .weather::first-letter {
   text-transform: capitalize;

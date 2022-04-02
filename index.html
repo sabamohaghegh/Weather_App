@@ -18,17 +18,28 @@
     <div class="container">
       <div class="weatherContainer">
         <form>
-          <input
-            type="search"
-            class="cityName"
-            id="city-name"
-            placeholder="Enter City Name"
-          />
-
-          <input type="submit" id="searchButton" value="Search" />
-          <span class="currentLocation" id="current-location">
-            <a href="#"> 📍</a></span
-          >
+          <div class="row">
+            <div class="col-7">
+              <input
+                type="search"
+                class="form-control"
+                id="city-name"
+                placeholder="Enter City Name"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-2">
+              <input
+                type="submit"
+                id="searchButton"
+                class="btn btn-primary"
+                value="Search"
+              />
+            </div>
+            <div class="col-2">
+              <a id="current-location" href="#"> 📍</a>
+            </div>
+          </div>
         </form>
         <br />
         <h1>
