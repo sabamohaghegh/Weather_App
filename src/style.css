@@ -51,3 +51,12 @@ small {
 .weather::first-letter {
   text-transform: capitalize;
 }
+
+h1 .active {
+  color: black;
+  cursor: default;
+}
+h1 .active:hover {
+  cursor: default;
+  color: black;
+}

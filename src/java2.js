@@ -49,7 +49,6 @@ let currentDateMonth = document.querySelector(".date .date-month");
 currentDateMonth.innerHTML = updateDateMonth();
 
 function currentTemp(response) {
-  console.log(response.data.weather[0].icon);
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector("#h1-heading").innerHTML = Math.round(
     response.data.main.temp
@@ -66,6 +65,7 @@ function currentTemp(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  celsiusTemp = response.data.main.temp;
   let icon = response.data.weather[0].icon;
 
   if (icon === "01d" || icon === "01n") {
@@ -140,30 +140,32 @@ function showCity(event) {
   let city = document.querySelector("#city-name").value;
   search(city);
 }
-
 function unitC(event) {
   event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   let heading = document.querySelector("#h1-heading");
-  heading.innerHTML = 10;
+  heading.innerHTML = Math.round(celsiusTemp);
 }
-
-let celsius = document.querySelector(".celsius");
-celsius.addEventListener("click", unitC);
 
 function unitF(event) {
   event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let heading = document.querySelector("#h1-heading");
-  let temp = heading.innerHTML;
-  temp = Number(temp);
-  heading.innerHTML = `${Math.round((temp * 9) / 5 + 32)}`;
+  heading.innerHTML = Math.round(fahrenheitTemp);
 }
 
-let fahrenheit = document.querySelector(".fahrenheit");
+let celsiusTemp = null;
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", unitC);
+
+let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", unitF);
 
 let searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", showCity);
-search("Toronto");
 
 function showPosition(position) {
   let lat = position.coords.latitude;
@@ -182,3 +184,4 @@ function showCurrentLocation(event) {
 
 currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", showCurrentLocation);
+search("Toronto");
