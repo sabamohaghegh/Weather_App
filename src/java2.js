@@ -13,8 +13,6 @@ function updateDay() {
   let day = days[now.getDay()];
   return day;
 }
-let weekDay = document.querySelector("#current-day");
-weekDay.innerHTML = updateDay();
 
 function updateHour() {
   let now = new Date();
@@ -28,16 +26,12 @@ function updateHour() {
   }
   return `${hour}:${minute}`;
 }
-let currentHour = document.querySelector(".time");
-currentHour.innerHTML = updateHour();
 
 function updateDateDay() {
   let now = new Date();
   let dateDay = now.getDate();
   return dateDay;
 }
-let currentDateDay = document.querySelector(".date .date-day");
-currentDateDay.innerHTML = updateDateDay();
 
 function updateDateMonth() {
   let now = new Date();
@@ -45,8 +39,6 @@ function updateDateMonth() {
   let dateMonth = months[now.getMonth()];
   return dateMonth;
 }
-let currentDateMonth = document.querySelector(".date .date-month");
-currentDateMonth.innerHTML = updateDateMonth();
 
 function currentTemp(response) {
   document.querySelector(".city").innerHTML = response.data.name;
@@ -157,16 +149,6 @@ function unitF(event) {
   heading.innerHTML = Math.round(fahrenheitTemp);
 }
 
-let celsiusTemp = null;
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", unitC);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", unitF);
-
-let searchForm = document.querySelector("form");
-searchForm.addEventListener("submit", showCity);
-
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -181,6 +163,28 @@ function showCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+let celsiusTemp = null;
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", unitC);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", unitF);
+
+let searchForm = document.querySelector("form");
+searchForm.addEventListener("submit", showCity);
+
+let weekDay = document.querySelector("#current-day");
+weekDay.innerHTML = updateDay();
+
+let currentHour = document.querySelector(".time");
+currentHour.innerHTML = updateHour();
+
+let currentDateDay = document.querySelector(".date .date-day");
+currentDateDay.innerHTML = updateDateDay();
+
+let currentDateMonth = document.querySelector(".date .date-month");
+currentDateMonth.innerHTML = updateDateMonth();
 
 currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", showCurrentLocation);
