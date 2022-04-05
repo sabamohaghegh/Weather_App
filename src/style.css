@@ -38,6 +38,8 @@ small {
   margin: 0 auto;
   display: block;
   text-align: center;
+  position: relative;
+  top: -12px;
 }
 #current-location {
   position: relative;
