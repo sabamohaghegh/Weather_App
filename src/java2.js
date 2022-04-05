@@ -40,6 +40,31 @@ function updateDateMonth() {
   return dateMonth;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let foreCastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Sat", "Mon"];
+  days.forEach(function (day) {
+    foreCastHTML =
+      foreCastHTML +
+      `<div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max">18°</span>
+                  <span class="weather-forecast-temperature-min">12°</span>
+                </div>
+              </div>
+            `;
+  });
+  foreCastHTML = foreCastHTML + `</div>`;
+  forecastElement.innerHTML = foreCastHTML;
+}
+
 function currentTemp(response) {
   document.querySelector(".city").innerHTML = response.data.name;
   document.querySelector("#h1-heading").innerHTML = Math.round(
@@ -189,3 +214,4 @@ currentDateMonth.innerHTML = updateDateMonth();
 currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", showCurrentLocation);
 search("Toronto");
+displayForecast();
